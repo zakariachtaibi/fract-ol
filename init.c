@@ -6,7 +6,7 @@
 /*   By: zchtaibi <zchtaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 22:23:22 by zchtaibi          #+#    #+#             */
-/*   Updated: 2024/04/22 17:27:12 by zchtaibi         ###   ########.fr       */
+/*   Updated: 2024/04/27 13:35:39 by zchtaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	data_init(t_fractal *fractal)
 	fractal->zoom = 1.0;
 	fractal->shift_x = 0.0;
 	fractal->shift_y = 0.0;
-	fractal->color = BLUE;
+	fractal->color = BOLD;
 }
 
 static void	events_init(t_fractal *fractal)
@@ -38,17 +38,11 @@ void	fractal_init(t_fractal *fractal)
 		exit(1);
 	fractal->mlx_window = mlx_new_window(fractal->mlx_connection, WINDOW_WIDTH,
 			WINDOW_HEIGHT, fractal->name);
-	if (fractal->mlx_window == NULL)
-	{
-		free(fractal->mlx_connection);
-		exit(1);
-	}
 	fractal->img.img_ptr = mlx_new_image(fractal->mlx_connection, WINDOW_WIDTH,
 			WINDOW_HEIGHT);
 	if (fractal->img.img_ptr == NULL)
 	{
 		mlx_destroy_window(fractal->mlx_connection, fractal->mlx_window);
-		free(fractal->mlx_connection);
 		exit(1);
 	}
 	fractal->img.pixels_ptr = mlx_get_data_addr(fractal->img.img_ptr,

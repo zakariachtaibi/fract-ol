@@ -6,7 +6,7 @@
 /*   By: zchtaibi <zchtaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:54:15 by zchtaibi          #+#    #+#             */
-/*   Updated: 2024/04/22 17:57:17 by zchtaibi         ###   ########.fr       */
+/*   Updated: 2024/04/24 13:45:54 by zchtaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,6 @@ t_complex	square(t_complex z)
 
 	result.x = (z.x * z.x) - (z.y * z.y);
 	result.y = (2 * z.y * z.x);
-	return (result);
-}
-
-t_complex	square_burning(t_complex z)
-{
-	t_complex	result;
-
-	result.x = fabs(2 * z.y * z.x);
-	result.y = ((z.x * z.x) - (z.y * z.y));
 	return (result);
 }
 

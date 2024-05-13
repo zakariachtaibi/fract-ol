@@ -6,7 +6,7 @@
 /*   By: zchtaibi <zchtaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 22:13:38 by zchtaibi          #+#    #+#             */
-/*   Updated: 2024/04/22 17:58:02 by zchtaibi         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:48:35 by zchtaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,18 @@ void	handle_burning_ship(char **av)
 
 int	main(int ac, char **av)
 {
-	if (ac == 2 && !ft_strncmp(av[1], "mandelbrot", 10))
+	if (ac == 2 && !ft_strcmp(av[1], "mandelbrot"))
 		handle_mandelbrot(av);
-	else if ((ac == 4 || ac == 2) && !ft_strncmp(av[1], "julia", 5))
+	else if ((ac == 4 || ac == 2) && !ft_strcmp(av[1], "julia"))
 	{
+		if (ac == 4)
+		{
+			check_julia(av, 2);
+			check_julia(av, 3);
+		}
 		handle_julia(av, ac);
 	}
-	else if (ac == 2 && !ft_strncmp(av[1], "burning_ship", 12))
+	else if (ac == 2 && !ft_strcmp(av[1], "burning_ship"))
 		handle_burning_ship(av);
 	else
 	{

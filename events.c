@@ -6,7 +6,7 @@
 /*   By: zchtaibi <zchtaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:18:07 by zchtaibi          #+#    #+#             */
-/*   Updated: 2024/04/22 18:00:34 by zchtaibi         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:24:22 by zchtaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	close_handler(t_fractal *fractal)
 {
 	mlx_destroy_image(fractal->mlx_connection, fractal->img.img_ptr);
 	mlx_destroy_window(fractal->mlx_connection, fractal->mlx_window);
-	free(fractal->mlx_connection);
 	exit(0);
 }
 
@@ -51,16 +50,16 @@ static void	handel_pan(int keycode, t_fractal *fractal)
 		fractal->shift_x += (0.5 * fractal->zoom);
 	else if (keycode == XK_RIGHT)
 		fractal->shift_x -= (0.5 * fractal->zoom);
-	else if (keycode == XK_DOWN)
-		fractal->shift_y += (0.5 * fractal->zoom);
 	else if (keycode == XK_UP)
+		fractal->shift_y += (0.5 * fractal->zoom);
+	else if (keycode == XK_DOWN)
 		fractal->shift_y -= (0.5 * fractal->zoom);
 }
 
 int	key_handler(int keycode, t_fractal *fractal)
 {
 	if (keycode == 49)
-		fractal->color += 100000;
+		fractal->color += 100;
 	else if (keycode == XK_ESCAPE)
 		close_handler(fractal);
 	else if (keycode == XK_PLUS)

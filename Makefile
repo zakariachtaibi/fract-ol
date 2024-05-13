@@ -6,13 +6,13 @@
 #    By: zchtaibi <zchtaibi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/14 22:13:41 by zchtaibi          #+#    #+#              #
-#    Updated: 2024/04/22 14:09:42 by zchtaibi         ###   ########.fr        #
+#    Updated: 2024/04/27 22:19:58 by zchtaibi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 
-CFLAGS =  -Wall -Werror -Wextra 
+CFLAGS =  -Wall -Werror -Wextra
 
 NAME = fractol
 
@@ -26,7 +26,7 @@ OBJS = ${SRC:%.c=%.o}
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-	$(CC) $(CFLAGS) $(OBJS) -fsanitize=address -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
   
 clean:
 	rm -f ${OBJS}

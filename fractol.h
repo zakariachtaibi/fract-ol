@@ -6,7 +6,7 @@
 /*   By: zchtaibi <zchtaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 22:13:36 by zchtaibi          #+#    #+#             */
-/*   Updated: 2024/04/22 17:53:42 by zchtaibi         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:39:32 by zchtaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # define BLACK 0x000000
 # define BOLD 0xFCBE11
 # define BLUE 0x5BBCFF
+# define WHITE 0xFFFFFF
 # define WINDOW_HEIGHT 800
 
 typedef struct s_complex
@@ -85,8 +86,9 @@ int			key_handler(int keycode, t_fractal *fractal);
 int			close_handler(t_fractal *fractal);
 int			mouse_handler(int button, int x, int y, t_fractal *fractal);
 
-int			ft_atoi(const char *nptr);
+double		ft_atod(const char *nptr, t_fractal *f);
 int			ft_isdigit(int c);
-int			ft_strncmp(const char *s1, const char *s2, size_t n);
+int			ft_strcmp(const char *s1, const char *s2);
+void		check_julia(char **av, int index);
 
 #endif

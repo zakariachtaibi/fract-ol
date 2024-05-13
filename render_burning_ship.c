@@ -6,7 +6,7 @@
 /*   By: zchtaibi <zchtaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 11:36:42 by zchtaibi          #+#    #+#             */
-/*   Updated: 2024/04/22 20:38:56 by zchtaibi         ###   ########.fr       */
+/*   Updated: 2024/04/23 17:27:10 by zchtaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static void	handel_pixel(int x, int y, t_fractal *fractal)
 		pixel_put(x, y, &fractal->img, color);
 	else
 	{
-		color = scale(i, 0, fractal->color, BOLD);
+		color = scale(i, 0, fractal->color, BLACK);
 		pixel_put(x, y, &fractal->img, color);
 	}
 }
